@@ -27,7 +27,26 @@ O Fundo imobiliário (FII) substituiu o fundo multimercado, pois achei mais pert
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
-'''python
+
+Existem duas possibilidades, inserir os dados direto no prompt (ctrl + c e ctrl + v), ou carregar os arquivos via código, conforme exemplo abaixo:
+
+```Pyhton
+import panda as pd
+import json
+
+#CSVs
+historico = pd.read_csv('data/historico_atendimento.csv')
+transacoes = pd.read_csv('data/ransacoes.csv')
+
+#JSONs
+
+with open ('data/perfil_investidor.json', 'r', encoding 'utf-8') as f
+  perfil = json.load(f)
+
+with open ('data/produtos_financeiros.json', 'r', encoding 'utf-8') as f
+  produto = json.load(f)
+
+```
 
 [ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
 
